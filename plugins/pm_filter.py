@@ -349,6 +349,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
+        buttons = [[
+            InlineKeyboardButton("🎭Group🎭", url='https://t.me/CKMoviez'),
+            InlineKeyboardButton("🔊Channel🔊", url='https://t.me/ddxbots')
+            ],[
+            InlineKeyboardButton("❗️New Release❗️", url='https://t.me/CKOFFICIALS')
+        ]]
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -393,6 +399,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
+        buttons = [[
+            InlineKeyboardButton("🎭Group🎭", url='https://t.me/CKMoviez'),
+            InlineKeyboardButton("🔊Channel🔊", url='https://t.me/ddxbots')
+            ],[
+            InlineKeyboardButton("❗️New Release❗️", url='https://t.me/CKOFFICIALS')
+        ]]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
