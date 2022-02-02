@@ -78,7 +78,7 @@ async def start(client, message):
             btn.append([InlineKeyboardButton(" ♻️ Try Again", callback_data=f"{pre}#{file_id}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Please Join the Channel and click on ♻️ Try Again!**",
+            text="**Join the Channel and click on ♻️ Try Again!**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
@@ -237,6 +237,12 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
+    buttons = [[
+        InlineKeyboardButton("🎭Group🎭", url='https://t.me/CKMoviez'),
+        InlineKeyboardButton("🔊Channel🔊", url='https://t.me/ddxbots')
+        ],[
+        InlineKeyboardButton("❗️New Movies❗️", url='https://t.me/CKofficials')
+    ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
