@@ -78,7 +78,8 @@ async def start(client, message):
             btn.append([InlineKeyboardButton(" ♻️ Try Again", callback_data=f"{pre}#{file_id}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Join the Channel and click on ♻️ Try Again!**",
+            text="**Join the Channel and click on
+ ♻️ Try Again!**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
